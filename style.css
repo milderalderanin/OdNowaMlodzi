@@ -19,8 +19,18 @@ body {
 
 
 .container {
+    padding: 50px;
 	height:2000px;
-}  
+    background-color: rgb(210,210,210);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    box-shadow:         0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
 
 .loader {
     position: fixed;
@@ -32,9 +42,15 @@ body {
 	background: url('loader.gif') 50% 50% no-repeat rgb(20,20,20);
 }
 
+.navbar {
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    box-shadow:         0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+}
+
 .slide-show {
 	margin-top: 20px;
-	margin-bottom: 100px;
+	#margin-bottom: 100px;
 	padding: 0;
 	box-shadow: 0px 0px 15px black;
 }
@@ -80,7 +96,7 @@ p {
 
 .info {
 	padding: 10px;
-	background-color: rgba(200,200,200,0.2);
+    background-color: rgb(255,255,255);
 	min-height: 400px;
 	-webkit-box-shadow: 0px 4px 9px 2px rgba(0,0,0,0.35);
 	-moz-box-shadow: 0px 4px 9px 2px rgba(0,0,0,0.35);
@@ -91,7 +107,7 @@ p {
 
 .carousel-control {
 	position: absolute;
-	top: 50%;
+	#top: 50%;
 	z-index: 5;
 	display: inline-block;
 }
