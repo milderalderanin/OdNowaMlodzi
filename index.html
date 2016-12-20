@@ -15,13 +15,19 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar" data-offset="60">
     <div class="loader"></div>
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+                    <span class="sr-only">Zmień</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">OdNowa Młodzi</a>
             </div>
 
-            <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navigationbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#about">O NAS</a>
@@ -57,6 +63,7 @@
                         <li data-target="#slideShow" data-slide-to="0" class="active"></li>
                         <li data-target="#slideShow" data-slide-to="1"></li>
                         <li data-target="#slideShow" data-slide-to="2"></li>
+                        <li data-target="#slideShow" data-slide-to="3"></li>
                     </ol>
 
                     <div class="carousel-inner slide-show" role="listbox">
@@ -68,6 +75,9 @@
                         </div>
                         <div class="item">
                             <img src="3.jpg" id="autoH" class="img" alt="my">
+                        </div>
+                        <div class="item">
+                            <img src="4.jpg" id="autoH" class="img" alt="my">
                         </div>
                     </div>
                     <a class="left carousel-control" href="#slideShow" role="button" data-slide="prev">
@@ -99,17 +109,17 @@
         <div class="row slideanim">
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
-                <span class="glyphicon glyphicon-off logo-small"></span>
+                <span class="glyphicon glyphicon-flash logo-small"></span>
                 <h4>Skąd czerpiemy siłę?</h4>
                 <p>...z Ducha Świętego - On nas umacnia</p>
             </div>
             <div class="col-sm-4">
-                <span class="glyphicon glyphicon-heart logo-small"></span>
+                <span class="glyphicon glyphicon-heart-empty logo-small"></span>
                 <h4>Dlaczego my?</h4>
                 <p>...bo Bóg uzdalnia powołanych, a nie powołuje uzdolnionych.</p>
             </div>
             <div class="col-sm-3">
-                <span class="glyphicon glyphicon-lock logo-small"></span>
+                <span class="glyphicon glyphicon-user logo-small"></span>
                 <h4>Po czym nas poznasz?</h4>
                 <p>...po spontaniczności i na pozór nieuzasadnionej radości na twarzy :-)</p>
             </div>
@@ -150,7 +160,7 @@
                     Jan Paweł II, list w setną rocznicę śmierci św. Jana Bosco, 31 stycznia 1988 r.</h4><br />
             </div>
             <div class="col-sm-3">
-                <img class="slideanim" src="jan-bosko.jpg" alt="jb" width="400">
+                <img class="slideanim" src="jan-bosko.jpg" alt="jb" width="100%">
             </div>
             <div class="col-sm-1"></div>
         </div>
@@ -160,7 +170,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
-                <img class="slideanim" src="matka.jpg" alt="mbg" width="400">
+                <img class="slideanim" src="matka.jpg" alt="mbg" width="100%">
             </div>
             <div class="col-sm-7">
                 <h2>Matka Boża Gietrzwałdzka</h2><br>
@@ -193,14 +203,14 @@
             </div>
             <div class="col-sm-2">
                 <div class="thumbnail">
-                    <img src="wieczory.jpg" alt="wieczory" width="400" height="300">
+                    <img src="wieczor.jpg" alt="wieczory" height="50px">
                     <p><strong>Wieczory Uwielbienia</strong></p>
                     <p>Dynamiczne spotkania modlitewne dla młodych są okazją do doświadczenia mocy uwielbienia i radosnego kościoła.</p>
                 </div>
             </div>
             <div class="col-sm-2">
                 <div class="thumbnail">
-                    <img src="bierzmo.jpg" alt="bierzmo" width="400" height="300">
+                    <img src="bierzmo.jpg" alt="bierzmo" height="50px">
                     <p><strong>Przygotowanie Do Bierzmowania </strong></p>
                     <p>Wielu z nas uczestniczy w ekipach przygotowujących bierzmowanych w parafiach olsztyńskich.
                         Służymy też pomocą w przygotowaniu programu formacji bierzmowanych i chętnie dzielimy się doświadczeniem.</p>
@@ -231,7 +241,7 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+                <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="15000">
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -246,7 +256,7 @@
                                 Przekazał mi Swoje słowa, które bardzo były mi potrzebne. Teraz wiem, że Jezus zawsze jest przy mnie,
                                 kocha mnie i mogę zwrócić się do Niego z każdą sprawą. Bardzo przeżyłam te rekolekcje ale wierzę i wiem,
                                 że Jezus działa w moim życiu."
-                                <br /><br /><span style="font-style:normal;">~ Emilia</span></h4>
+                                <br /><br /><span style="font-style:normal;">~ Emilia</span><br /><br /></h4>
                         </div>
                         <div class="item">
                             <h4>Przyjechałem na te rekolekcje, ponieważ mama powiedziała mi, że jeśli nie wybiorę się jakieś rekolekcje, to nie wyjadę do Anglii. (...)
@@ -265,7 +275,7 @@
                             <h4>Wpadłam w złe towarzystwo i nałogi, które mnie trzymały i nie chciały wypuścić. Przestałam wierzyć w Boga.
                                 Uważałam, że te rekolekcje będą beznadziejne. Teraz wiem, że dzięki nim i wszystkim animatorom nie dość,
                                 że się nawróciłam to otworzyłam się też na ludzi.
-                                <br /><br /><span style="font-style:normal;">~ Wiktoria</span></h4>
+                                <br /><br /><span style="font-style:normal;">~ Wiktoria</span><br /><br /></h4>
                         </div>
                         <div class="item">
                             <h4>Przyjeżdżając na rekolekcje do Dobrego Miasta, nie sądziłam, że wyjadę stąd będąc inną, zmienioną na lepsze osobą.
@@ -297,7 +307,7 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-4">
                 <p>Napisz do nas a na pewno odpowiemy w ciągu 24 godzin!</p>
-                <p><span class="glyphicon glyphicon-map-marker"></span> 'Ulica'</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Barcza 2, 11-041 Olsztyn</p>
                 <p><span class="glyphicon glyphicon-phone"></span> 'Telefon'</p>
                 <p><span class="glyphicon glyphicon-envelope"></span> youthofwarmia@googlegroups.com</p>
                 <p><span class="glyphicon glyphicon-book"></span> <a href="https://www.facebook.com/OdNowaMlodzi/">Facebook</a></p>
@@ -326,11 +336,21 @@
     <script>
         function myMap() {
             var mapCanvas = document.getElementById("map");
+            var myLatlng = new google.maps.LatLng(53.753383, 20.498761);
             var mapOptions = {
-                center: new google.maps.LatLng(51.5, -0.2),
-                zoom: 10
+                center: myLatlng,
+                zoom: 17,
+                zoomControl: false,
+                scaleControl: true
             }
+
             var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title: "Parafia Miłosierdzia Bożego"
+            });
+            marker.setMap(map);
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
