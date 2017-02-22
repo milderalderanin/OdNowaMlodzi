@@ -1,0 +1,198 @@
+@font-face {
+    font-family: Trykker-Regular;
+    src: url(Trykker-Regular.otf);
+}
+
+html { 
+	background: url(back.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height:100%;
+}
+
+body {
+	background-color: transparent; 
+	font-family: Trykker-Regular;
+}
+
+
+.container {
+    padding: 50px;
+	height:2000px;
+    background-color: rgb(210,210,210);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    box-shadow:         0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
+
+.loader {
+    position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('loader.gif') 50% 50% no-repeat rgb(20,20,20);
+}
+
+.navbar {
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+    box-shadow:         0px 0px 15px 5px rgba(50, 50, 50, 0.3);
+}
+
+.slide-show {
+	margin-top: 20px;
+	#margin-bottom: 100px;
+	padding: 0;
+	box-shadow: 0px 0px 15px black;
+}
+
+.slide-show img {
+  	width: 100%; 
+  	max-height: 100%;
+  	margin: 0;
+  	display: block;
+  	padding: 0;
+}
+
+.onload {
+	opacity: 1;
+	position: fixed;
+	top: 0;
+    width: 50%;
+    height: 100%;
+    background: black; 
+    background: -webkit-linear-gradient(rgb(30,30,30),rgb(0,0,0)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(30,30,30),rgb(0,0,0)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(30,30,30),rgb(0,0,0)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(30,30,30),rgb(0,0,0)); /* Standard syntax */
+    z-index: 1000;
+}
+.onload-loaded {
+	opacity: 0;
+	width: 50%;
+	background: rgba(0,0,0,0);
+	-webkit-transition: -webkit-transform 0.6s, opacity 1.5s;
+	-moz-transition: -moz-transform 0.6s, opacity 1.5s;
+	transition: transform 0.6s, opacity 1.5s;
+}
+
+p {
+	color: rgba(20,20,20,1); 
+}
+
+.block {
+	#opacity:0;
+	padding: 10px;
+}
+
+.info {
+	padding: 10px;
+    background-color: rgb(255,255,255);
+	min-height: 400px;
+	-webkit-box-shadow: 0px 4px 9px 2px rgba(0,0,0,0.35);
+	-moz-box-shadow: 0px 4px 9px 2px rgba(0,0,0,0.35);
+	box-shadow: 0px 4px 9px 2px rgba(0,0,0,0.35);
+	border: 0px solid;
+	border-radius: 5px;
+}
+
+.carousel-control {
+	position: absolute;
+	#top: 50%;
+	z-index: 5;
+	display: inline-block;
+}
+
+.align-left {
+	text-align: left;
+}
+.align-center {
+	text-align: center;
+}
+.align-right {
+	text-align: right;
+}
+
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: rgba(240,240,240,1); 
+}
+
+.link-1 a::before,
+.link-1 a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+.link-1 a::before {
+	margin-right: 10px;
+	content: '|';
+	-webkit-transform: translate(20px, -1px);
+	-moz-transform: translate(20px, -1px);
+	transform: translate(20px, -1px);
+}
+.link-1 a::after {
+	margin-left: 10px;
+	content: '|';
+	-webkit-transform: translate(-20px, -1px);
+	-moz-transform: translate(-20px, -1px);
+	transform: translate(-20px, -1px);
+}
+.link-1 a:hover::before,
+.link-1 a:hover::after,
+.link-1 a:focus::before,
+.link-1 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translate(0px, -1px);
+	-moz-transform: translate(0px, -1px);
+	transform: translate(0px, -1px);
+}
+
+
+.text-1 {
+	opacity: 0;
+	transform: translateX(-100px);
+}
+.text-1-loaded {
+	margin-left: 50px;
+	opacity: 1;
+	-webkit-transition: -webkit-transform 0.6s, opacity 1.5s;
+	-moz-transition: -moz-transform 0.6s, opacity 1.5s;
+	transition: transform 0.6s, opacity 1.5s;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.full {
+	width: 100%;
+}
+
+@media only screen and (max-width : 768px) {
+	
+	.align-left,
+	.align-center,
+	.align-right {
+		text-align: center;
+	}
+	
+	.random-photo {
+		height: auto;
+	}
+
+}
