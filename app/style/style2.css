@@ -10,6 +10,7 @@ body {
 	font-weight: 400;
 	line-height: 1.8;
 	color: #404040;
+	height: 100%;
 }
 h2 {
 	font-size: 24px;
@@ -41,14 +42,12 @@ img {
 	box-shadow:         0px 0px 0px 0px rgba(50, 50, 50, 0.5);
 }
 .jumbotron {
-	background-color: #007dff;
+	background-color: #00b3f3;
 	color: #fff;
 	padding: 100px 25px;
 	font-family: Montserrat, sans-serif;
 }
-.container-fluid {
 
-}
 .slide-con .row {
 	padding: 0px 0px;
 }
@@ -56,14 +55,14 @@ img {
 	padding: 60px 50px;
 }
 .bg-grey {
-	background-color: #f6f6f6;
+	background-color: #fefaf9;
 }
 .logo-small {
-	color: #007dff;
+	color: #00b3f3;
 	font-size: 50px;
 }
 .logo {
-	color: #007dff;
+	color: #00b3f3;
 	font-size: 200px;
 }
 .slide-show {
@@ -88,18 +87,17 @@ img {
 }
 .thumbnail img {
 	width: 100%;
-	height: 100%;
 	margin-bottom: 10px;
 }
 .carousel-control.right, .carousel-control.left {
 	background-image: none;
-	color: #007dff;
+	color: #00b3f3;
 }
 .carousel-indicators li {
-	border-color: #007dff;
+	border-color: #00b3f3;
 }
 .carousel-indicators li.active {
-	background-color: #007dff;
+	background-color: #00b3f3;
 }
 .item h4 {
 	font-size: 19px;
@@ -111,8 +109,11 @@ img {
 .item span {
 	font-style: normal;
 }
+.certificate {
+	min-height: 300px;
+}
 .panel {
-	border: 1px solid #007dff;
+	border: 1px solid #00b3f3;
 	border-radius: 0;
 	transition: box-shadow 0.5s;
 }
@@ -141,17 +142,17 @@ img {
 	font-size: 32px;
 }
 .panel-footer h4 {
-	color: #aaa;
+	color: #969696;
 	font-size: 14px;
 }
 .panel-footer .btn {
 	margin: 15px 0;
-	background-color: #007dff;
+	background-color: #00b3f3;
 	color: #fff;
 }
 .navbar {
 	margin-bottom: 0;
-	background-color: #f4511e;
+	background-color: #fdb016;
 	z-index: 9999;
 	border: 0;
 	font-size: 12px;
@@ -166,7 +167,7 @@ img {
 	color: #fff !important;
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
-	color: #007dff !important;
+	color: #00b3f3 !important;
 	background-color: #fff !important;
 }
 .navbar-default .navbar-toggle {
@@ -176,14 +177,14 @@ img {
 footer .glyphicon {
 	font-size: 20px;
 	margin-bottom: 20px;
-	color: #007dff;
+	color: #00b3f3;
 }
 .slideanim {visibility:hidden;}
 .slide {
 	animation-name: slide;
 	-webkit-animation-name: slide;
-	animation-duration: 1s;
-	-webkit-animation-duration: 1s;
+	animation-duration: 0.8s;
+	-webkit-animation-duration: 0.8s;
 	visibility: visible;
 }
 
@@ -221,6 +222,7 @@ footer .glyphicon {
 		width: 100%;
 		margin-bottom: 35px;
 	}
+
 }
 @media screen and (max-width: 480px) {
 	.logo {
