@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Trykker-Regular;
+    src: url(Trykker-Regular.otf);
+}
+
+body {
+    background: url("/images/login.png");
+
+    font-family: Trykker-Regular;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #f0f0f0;
+    height: 100%;
+}
+.container {
+    padding-top: 15%;
+}
+.login {
+    background-color: rgba(128,128,128,0.3);
+    border: 1px solid rgba(42, 42, 42, 0.6);
+    border-radius: 5px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.button {
+    background-color: #2165c2;
+    color: #fff;
+    transition: 0.2s;
+    width: 100px;
+}
+.button:hover {
+    background-color: #2165c2;
+    box-shadow: 0px 0px 10px #c792e1;
+    color: #fff;
+    transition: 0.2s;
+    width: 100px;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover span {
+    padding-right: 15px;
+}
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button-left {
+    background-color: #2165c2;
+    color: #fff;
+    transition: 0.2s;
+    width: 100px;
+}
+.button-left:hover {
+    background-color: #2165c2;
+    box-shadow: 0px 0px 10px #c792e1;
+    color: #fff;
+    transition: 0.2s;
+    width: 100px;
+}
+.button-left span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button-left span:after {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+}
+.button-left:hover span {
+    padding-left: 15px;
+}
+.button-left:hover span:after {
+    opacity: 1;
+    left: 0;
+}
+
+

@@ -1,0 +1,18 @@
+Options FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.odnowa-mlodzi\.pl$ [NC]
+RewriteRule ^(.*)$ http://odnowa-mlodzi.pl/$1 [R=301,L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ ?controller=$1 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ ?controller=$1&action=$2 [QSA]
+
+RewriteRule ^blog /?controller=blog
+RewriteRule ^blog /?controller=blog&action=index
+RewriteRule ^blog/([0-9]+)$ /?controller=blog&action=post&id=$1
+
+RewriteRule ^admin /?controller=admin
+RewriteRule ^admin /?controller=admin&action=index
+RewriteRule ^register /?controller=admin&action=register
+RewriteRule ^login /?controller=admin&action=login
+RewriteRule ^logout /?controller=admin&action=logout

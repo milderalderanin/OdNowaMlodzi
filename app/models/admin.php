@@ -30,12 +30,23 @@ class Admin {
         return $list;
     }
 
-    public static function find($login) {
+    public static function findLogin($login) {
         $db = Db::getInstance();
 
         $req = $db->prepare('SELECT * FROM users WHERE login = :login');
 
         $req->execute(array('login' => $login));
+        $user = $req->fetch();
+
+        return $user;
+    }
+
+    public static function findId($id) {
+        $db = Db::getInstance();
+
+        $req = $db->prepare('SELECT * FROM users WHERE id = :id');
+
+        $req->execute(array('id' => $id));
         $user = $req->fetch();
 
         return $user;

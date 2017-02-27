@@ -30,15 +30,56 @@ class Post {
         return $list;
     }
 
+
     public static function find($id) {
         $db = Db::getInstance();
 
-        $id = intval($id);
         $req = $db->prepare('SELECT * FROM posts WHERE id = :id');
 
         $req->execute(array('id' => $id));
-        $post = $req->fetch();
+        $user = $req->fetch();
 
-        return new Post($post['id'], $post['author'], $post['content']);
+        return $user;
+    }
+
+    public static function add($login, $password) {
+
+        $password = password_hash($password, PASSWORD_BCRYPT, ["cost" => 8]);
+
+        $db = Db::getInstance();
+
+        $sql = "INSERT INTO `users` (`login`, `password`) VALUES (:log, :pass)";
+        $statement = $db->prepare($sql);
+
+        $statement->bindValue(':log', $login);
+        $statement->bindValue(':pass', $password);
+
+        $inserted = $statement->execute();
+
+        if($inserted){
+            echo 'Row inserted!<br>';
+        }
+    }
+
+    public static function paginate($page, $limit) {
+        $db = Db::getInstance();
+
+        $total = $db->query('SELECT COUNT(*) FROM posts')->fetchColumn();
+        $pages = ceil($total / $limit);
+        $offset = ($page - 1)  * $limit;
+
+        $req = $db->prepare('SELECT * FROM posts ORDER BY date LIMIT :limit OFFSET :offset');
+
+        $req->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $req->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
+        $req->execute();
+
+        $posts = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        return $posts;
+
+
+
+
     }
 }

@@ -1,3 +1,3 @@
 
 
-<?php require_once('routes.php'); ?>
+<?php require_once('../app/routes.php'); ?>

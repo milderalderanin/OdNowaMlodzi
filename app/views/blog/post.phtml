@@ -8,12 +8,62 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script src="style/scripts.js"></script>
-    <link rel="stylesheet" href="style/style2.css">
+    <script src="/style/scripts.js"></script>
+    <link rel="stylesheet" href="/style/style2.css">
     <title>Odnowa Młodzi | Aktualności</title>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-post
+<div id="post" class="container">
+    <div class="row">
+        <div class="col-sm-7 bg-grey">
+        <?php echo $post['title']; ?><br />
+        <?php echo $post['text']; ?><br />
+        <?php echo $user['login']; ?><br />
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<footer class="container-fluid text-center bg-grey">
+    <a class="page-scroll" href="#page-top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>Strona stworzona przez <a href="http://www.cutyris.net" title="Cutyris Dev Studio">Robert Galon</a></p>
+</footer>
+
+<script>
+    $(document).ready(function(){
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+                    window.location.hash = hash;
+                });
+            }
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
 </body>
 </html>

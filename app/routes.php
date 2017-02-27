@@ -7,7 +7,7 @@
  */
 
 function call($controller, $action) {
-    require_once('controllers/' . $controller . 'Controller.php');
+    require_once('../app/controllers/' . $controller . 'Controller.php');
 
     switch($controller) {
         case 'about':
@@ -15,12 +15,13 @@ function call($controller, $action) {
             break;
 
         case 'blog':
-            require_once('models/blog.php');
+            require_once('../app/models/blog.php');
+            require_once('../app/models/admin.php');
             $controller = new BlogController();
             break;
 
         case 'admin':
-            require_once('models/admin.php');
+            require_once('../app/models/admin.php');
             $controller = new AdminController();
             break;
     }
