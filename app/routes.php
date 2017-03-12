@@ -24,6 +24,12 @@ function call($controller, $action) {
             require_once('../app/models/admin.php');
             $controller = new AdminController();
             break;
+
+        case 'gallery':
+            require_once('../app/models/gallery.php');
+            require_once('../app/models/image.php');
+            $controller = new GalleryController();
+            break;
     }
 
     $controller->{ $action }();
@@ -31,7 +37,8 @@ function call($controller, $action) {
 
 $controllers = array('about' => ['index', 'error'],
                      'admin' => ['index', 'login', 'register', 'logout', 'error'],
-                     'blog' => ['index', 'post', 'error']
+                     'blog' => ['index', 'post', 'error'],
+                     'gallery' => ['index']
 );
 
 if (array_key_exists($controller, $controllers)) {
