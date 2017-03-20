@@ -1,0 +1,107 @@
+<script src="/js/tinymce/tinymce.min.js?apiKey=b9cah750qtghp048qg8qfoqtnj7sxk378483uezo05ohja7c"></script>
+<script>
+    tinymce.init({
+        selector:'#content',
+        language: 'pl',
+        height : 300
+});
+</script>
+
+
+
+
+<h1 class="page-header">Posty</h1>
+
+<button onclick="browsePost()">Przeglądaj posty</button><br />
+
+<div id="browsePost">
+
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 10%;">Twórca</th>
+                <th style="width: 60%;">Tytuł</th>
+                <th style="width: 10%;">Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($posts as $key=>$post): ?>
+                <tr>
+                    <td>
+                        <?php echo $users[$post['author_id']]; ?>
+                    </td>
+                    <td>
+                        <?php echo $post['title']; ?>
+                        <button onclick="deletePost(<?php echo $post['id']; ?>)" style="float: right;">Usuń</button>
+                        <button onclick="editPost(<?php echo $post['id']; ?>)" style="float: right;">Edytuj</button>
+                    </td>
+                    <td>
+                        <?php echo date('d.m.Y H:i', strtotime($post['date'])); ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <center>
+            <?php if($left): ?>
+                <a href=<?php print('"/admin/posts/' . ($page - 1)); ?>" class=""> Wstecz </a>
+            <?php endif; ?>
+            <?php print($page); ?>
+            <?php if($right): ?>
+                <a href=<?php print('"/admin/posts/' . ($page + 1)); ?>" class=""> Dalej </a>
+            <?php endif; ?>
+        </center>
+    </div>
+
+</div>
+
+
+
+<button onclick="showPost()">Dodaj post</button><br />
+
+<div id="newPost" style="display: none;">
+
+    <form method="post" action="/admin/addpost">
+        <h2><textarea id="title" name="title" placeholder="Tytuł posta..." style="width:100%;cursor:text;"></textarea></h2>
+        <textarea id="content" name="content" style="width:100%;cursor:text;"></textarea>
+        <input type="submit" name="save" value="Wyślij" />
+        <input type="reset" name="reset" value="Reset" />
+    </form>
+
+</div>
+
+
+<script>
+    function showPost() {
+        var x = document.getElementById('newPost');
+        var y = document.getElementById('browsePost');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+            y.style.display = 'none';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+    function browsePost() {
+        var x = document.getElementById('browsePost');
+        var y = document.getElementById('newPost');
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+            y.style.display = 'none';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+    function editPost(id) {
+        window.location.href = "/admin/editpost/" + id + "/<?php echo $page; ?> ";
+    }
+    function deletePost(id) {
+        if (confirm("Na pewno chcesz usunąć tego posta?") == true) {
+            window.location.href = "/admin/deletepost/" + id + "/<?php echo $page; ?> ";
+        }
+    }
+</script>

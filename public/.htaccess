@@ -7,4 +7,5 @@ RewriteRule ^(.*)$ http://odnowa-mlodzi.pl/$1 [R=301,L]
 RewriteRule ^([a-zA-Z0-9_-]+)/?$ ?controller=$1 [QSA]
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ ?controller=$1&action=$2 [QSA]
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ ?controller=$1&action=$2&var=$3 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ ?controller=$1&action=$2&var=$3&page=$4 [QSA]
 

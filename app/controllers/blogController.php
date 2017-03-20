@@ -11,7 +11,7 @@ class BlogController
 
     public function index()
     {
-        $posts = Post::paginate(1,2);
+        $posts = Post::paginate(1,5);
         foreach($posts as $post)
         {
             $users[$post['author_id']] = Admin::findId($post['author_id'])['login'];
@@ -34,6 +34,7 @@ class BlogController
 
         require_once ('../app/views/blog/post.phtml');
     }
+
 
     public function error()
     {

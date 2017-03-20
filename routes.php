@@ -21,15 +21,12 @@ function call($controller, $action) {
             break;
 
         case 'admin':
-            require_once('../app/models/gallery.php');
-            require_once('../app/models/image.php');
-            require_once('../app/models/blog.php');
             require_once('../app/models/admin.php');
             $controller = new AdminController();
             break;
 
         case 'gallery':
-            require_once('../app/models/gallery.php');
+            require_once('../app/models/gallery.phtml');
             require_once('../app/models/image.php');
             $controller = new GalleryController();
             break;
@@ -39,9 +36,7 @@ function call($controller, $action) {
 }
 
 $controllers = array('about' => ['index', 'error'],
-                     'admin' => ['index', 'login', 'register', 'logout', 'addpost',
-                     'deletepost', 'editpost', 'posts', 'gallery',
-                     'accountsettings','users' , 'error'],
+                     'admin' => ['index', 'login', 'register', 'logout', 'error'],
                      'blog' => ['index', 'post', 'error'],
                      'gallery' => ['index']
 );

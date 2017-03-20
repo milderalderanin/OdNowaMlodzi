@@ -1,0 +1,30 @@
+<script src="/js/tinymce/tinymce.min.js?apiKey=b9cah750qtghp048qg8qfoqtnj7sxk378483uezo05ohja7c"></script>
+<script>
+    tinymce.init({
+        selector:'#content',
+        language: 'pl',
+        height : 300
+    });
+</script>
+
+<h1 class="page-header">Edycja Posta</h1>
+
+<div id="updatePost">
+
+    <form method="post" action="/admin/editpost">
+        <h2><textarea id="title" name="title" style="width:100%;cursor:text;"><?php echo $post['title']; ?>
+        </textarea></h2>
+        <textarea id="content" name="content" style="width:100%;cursor:text;"><?php echo $post['text']; ?>
+        </textarea>
+        <textarea id="id" name="id" style="display: none;"><?php echo $id; ?></textarea>
+        <input type="submit" name="save" value="Wyślij" />
+        <button onclick="back()" name="back">Cofnij</button>
+    </form>
+
+</div>
+
+<script>
+    function back() {
+        window.location.href = '/admin/posts' + '/<?php echo $page; ?>';
+    }
+</script>

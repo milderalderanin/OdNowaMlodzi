@@ -42,22 +42,41 @@ class Post {
         return $user;
     }
 
-    public static function add($login, $password) {
+    public static function add($title, $content, $author_id) {
 
-        $password = password_hash($password, PASSWORD_BCRYPT, ["cost" => 8]);
 
         $db = Db::getInstance();
 
-        $sql = "INSERT INTO `users` (`login`, `password`) VALUES (:log, :pass)";
+        $sql = "INSERT INTO `posts` (`title`, `text`, `date`, `author_id`) VALUES (:title, :content, NOW(), :author)";
         $statement = $db->prepare($sql);
 
-        $statement->bindValue(':log', $login);
-        $statement->bindValue(':pass', $password);
+        $statement->bindValue(':title', $title);
+        $statement->bindValue(':content', $content);
+        $statement->bindValue(':author', $author_id);
 
         $inserted = $statement->execute();
 
         if($inserted){
-            echo 'Row inserted!<br>';
+            echo 'Dodano Post!<br>';
+        }
+    }
+
+    public static function update($title, $content, $id) {
+
+
+        $db = Db::getInstance();
+
+        $sql = "UPDATE posts SET title = :title, text = :content WHERE id = :id";
+        $statement = $db->prepare($sql);
+
+        $statement->bindValue(':title', $title);
+        $statement->bindValue(':content', $content);
+        $statement->bindValue(':id', $id);
+
+        $inserted = $statement->execute();
+
+        if($inserted){
+            echo 'Dodano Post!<br>';
         }
     }
 
@@ -68,7 +87,7 @@ class Post {
         $pages = ceil($total / $limit);
         $offset = ($page - 1)  * $limit;
 
-        $req = $db->prepare('SELECT * FROM posts ORDER BY date LIMIT :limit OFFSET :offset');
+        $req = $db->prepare('SELECT * FROM posts ORDER BY date DESC LIMIT :limit OFFSET :offset');
 
         $req->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
         $req->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
@@ -78,8 +97,25 @@ class Post {
 
         return $posts;
 
-
-
-
     }
+
+    public static function amount()
+    {
+        $db = Db::getInstance();
+        $total = $db->query('SELECT COUNT(*) FROM posts')->fetchColumn();
+
+        return $total;
+    }
+
+
+    public static function delete($id)
+    {
+        $db = Db::getInstance();
+
+        $req = $db->prepare('DELETE FROM posts WHERE id = :id');
+        $req->bindValue(':id', (int)$id, PDO::PARAM_INT);
+
+        $req->execute();
+    }
+
 }

@@ -1,0 +1,38 @@
+<h1 class="page-header">Galerie i Zdjęcia</h1>
+<form method="post"  enctype="multipart/form-data">
+    <input type="file" name="images[]" accept=".jpg,.png, .jpeg" multiple="" />
+    <button type="submit" id="submit">Wyślij</button>
+</form>
+
+
+
+<?php
+if (isset($_FILES['images'])) {
+    $myFile = $_FILES['images'];
+    $fileCount = count($myFile["name"]); ?>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 10%;">Plik</th>
+                <th style="width: 60%;">Plik</th>
+                <th style="width: 10%;">Galeria</th>
+                <th style="width: 20%;">Podgląd</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php for ($i = 0; $i < $fileCount; $i++): ?>
+                <tr>
+                    <td>
+                        #<?= $i+1 ?>
+                    </td>
+                    <td>
+                        <?= $myFile["name"][$i] ?><br>
+                    </td>
+                    <td>1</td>
+                    <td>Minit</td>
+                </tr>
+            <?php endfor; ?>
+         </tbody>
+    </table>
+<?php } ?>
